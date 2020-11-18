@@ -1,0 +1,23 @@
+.low-usage {
+  background-color: green;
+}
+
+.medium-usage {
+  background-color: orange;
+}
+
+.high-usage {
+  background-color: red;
+}
+
+.button-saver {
+  background-color: #4CAF50;
+}
+
+.power-saver-off {
+  background-color: red;
+}
+
+#usage {
+  max-width: 100px;
+}

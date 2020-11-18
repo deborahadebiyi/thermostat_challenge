@@ -1,45 +1,34 @@
 class Thermostat {
 
   constructor() {
-
     this.temperature = 20;
     this.minTemperature = 10;
     this.powerSaver = true;
-    this.maxTemperatureOn = 25;
-    this.maxTemperatureOff = 32;
+    this.maxTemperature = 25;
   }
 
   up(){
-    if(this.maxTemp()){
-      return;
-    }else{
-    this.temperature += 1;
-  };
+    if (this.temperature < this.maxTemperature){
+      this.temperature += 1;
+    }
   }
 
   down(){
-    if(this.temperature < 10) {
-      this.temperature = this.minTemperature;
-    } else {
+    if(this.temperature > this.minTemperature) {
       this.temperature -= 1;
     }
   }
 
-  powerSaverOn(){
-   this.maxTemperatureOn;
-   this.powerSaver = true;
-  }
-
-  powerSaverOff(){
-    this.maxTemperatureOff = 32;
-    this.powerSaver = false;
-  }
-
-  maxTemp(){
-    if(this.powerSaver === false) {
-      return this.temperature === this.maxTemperatureOff;
+  powerSaverSwitch() {
+    if (this.powerSaver === true) {
+      this.maxTemperature = 32;
+      this.powerSaver = false;
     } else {
-      return this.temperature === this.maxTemperatureOn;
+      if (this.temperature > 25) {
+        this.temperature = 25;
+      }
+      this.maxTemperature = 25;
+      this.powerSaver = true;
     }
   }
 
